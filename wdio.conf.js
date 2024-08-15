@@ -26,18 +26,6 @@ export const config = {
                 '--disable-dev-shm-usage',
                 '--disable-infobars'
             ]}
-    },{
-        maxInstances: 10,
-        browserName: 'firefox',
-        'moz:firefoxOptions': {
-            args: ['-headless', '-width=1920', '-height=1080'], 
-            prefs: {
-                'browser.download.folderList': 2,
-                'browser.download.dir': '/tmp/downloads',
-                'browser.helperApps.neverAsk.saveToDisk': 'application/pdf',
-            },
-        },
-        acceptInsecureCerts: true, 
     }],
 
     logLevel: 'info',
