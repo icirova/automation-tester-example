@@ -54,12 +54,9 @@ describe("Google Search and Navigation Test", () => {
 
   // Verify the page title contains "Kariéra"
   const pageTitle = await browser.getTitle();
-  expect(pageTitle).toContain('Kariéra');
-
+  expect(pageTitle).toContain('Kar§iéra');
 
   //Acceptance of cookies on MoroSystems on "Kariéra" page.
   await acceptCookies('#cookiescript_accept');
-
-
 });
 });

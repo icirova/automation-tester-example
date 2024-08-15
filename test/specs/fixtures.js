@@ -1,4 +1,3 @@
-
 export const googleSearchBar = "#APjFqb";
 export const googleSearchButton = '.gNO89b';
 export const linkToMoroSystemsWebsite = '[jsname="UWckNb"]';
