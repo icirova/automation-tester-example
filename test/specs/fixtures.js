@@ -5,4 +5,3 @@ export const careersPageLink = '//a[text()="Kariéra"]';//XPath selektor, menu j
 export const logo = '.logo' ;
 export const languageSelector = '.header__lang';
 export const czechLanguage = 'a=cz';
-export const englishLanguage = 'a=en';

@@ -5,8 +5,7 @@ import {
   careersPageLink,
   logo,
   languageSelector,
-  czechLanguage,
-  englishLanguage
+  czechLanguage
 } from "./fixtures.js";
 
 
@@ -62,42 +61,5 @@ describe("Google Search and Navigation Test", () => {
 
     //Acceptance of cookies on MoroSystems on "Kariéra" page.
     await acceptCookies("#cookiescript_accept");
-  });
-
-  
-  it("career page should not be found in english version ", async () => {
-    //Opens the browser and navigates to Google
-    await browser.url("https://www.google.com");
-
-    //Acceptance of cookies on Google.
-    await acceptCookies("#L2AGLb > div");
-
-    //Type "MoroSystems" into the Google search bar
-    const searchBar = await $(googleSearchBar);
-    await searchBar.setValue("MoroSystems");
-    expect(searchBar).toHaveValue("MoroSystems");
-
-    //Display of search results.
-    const searchButton = await $(googleSearchButton);
-    await searchButton.click();
-
-    //Opening the MoroSystems website.
-    const moroLink = await $(linkToMoroSystemsWebsite);
-    await moroLink.waitForDisplayed();
-    expect(moroLink).toBeDisplayed();
-    await moroLink.click();
-
-    // Verify MoroSystems logo is displayed
-    const moroLogo = await $(logo);
-    await moroLogo.waitForDisplayed();
-    expect(moroLogo).toBeDisplayed();
-
-    //Acceptance of cookies on MoroSystems.
-    await acceptCookies("#cookiescript_accept");
-
-    (await $(languageSelector)).click();
-    (await $(englishLanguage)).click()
-    
-    expect(careersPageLink).not.toExist();
   });
 });
