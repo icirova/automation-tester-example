@@ -3,7 +3,9 @@ import {
         googleSearchButton, 
         linkToMoroSystemsWebsite, 
         careersPageLink,
-        logo
+        logo,
+        languageSelector,
+        czechLanguage
 } from './fixtures.js'
 
 describe("Google Search and Navigation Test", () => {
@@ -48,13 +50,16 @@ describe("Google Search and Navigation Test", () => {
   //Acceptance of cookies on MoroSystems.
   await acceptCookies('#cookiescript_accept');
   
+  (await $(languageSelector)).click();
+  (await $(czechLanguage)).click();
+
   //Clicking on the "Kariéra" link.
   const careerLink = await $(careersPageLink);
   await careerLink.click();
 
   // Verify the page title contains "Kariéra"
   const pageTitle = await browser.getTitle();
-  expect(pageTitle).toContain('Kar§iéra');
+  expect(pageTitle).toContain('Kariéra');
 
   //Acceptance of cookies on MoroSystems on "Kariéra" page.
   await acceptCookies('#cookiescript_accept');
