@@ -56,8 +56,8 @@ exports.config = {
             args: [
                 // '--headless', // Run in headless mode
                 '--disable-gpu', // Disable GPU acceleration
-                '--window-size=1280,800',
-            '--disable-search-engine-choice-screen'
+                '--window-size=1920,1080',
+                '--disable-search-engine-choice-screen'
             ]}
     }],
 
