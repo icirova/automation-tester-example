@@ -11,6 +11,7 @@ export const config = {
         './test/specs/**/*.js'
     ],
     exclude: [
+        './test/specs/fixtures.js'
     ],
     maxInstances: 10,
 
@@ -62,7 +63,7 @@ export const config = {
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
-                5000)
+                60000)
 
             generation.on('exit', function(exitCode) {
                 clearTimeout(generationTimeout)
