@@ -20,7 +20,6 @@ describe("Google Search and Navigation Test", () => {
   }
 
   it("should search for MoroSystems on Google and navigate to the Career page", async () => {
-    this.retries(3);
     //Opens the browser and navigates to Google
     await browser.url("https://www.google.com");
 

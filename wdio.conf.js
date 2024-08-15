@@ -60,7 +60,8 @@ export const config = {
 
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 60000,
+        retries: 3
     },
 
     onPrepare: function() {
