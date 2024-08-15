@@ -59,7 +59,7 @@ export const config = {
         'goog:chromeOptions': {
             // Add custom Chrome arguments (see https://peter.sh/experiments/chromium-command-line-switches/)
             args: [
-                // '--headless', // Run in headless mode
+                '--headless', // Run in headless mode
                 '--disable-gpu', // Disable GPU acceleration
                 '--window-size=1920,1080',
                 '--disable-search-engine-choice-screen',
