@@ -1,65 +1,44 @@
-import {
-  googleSearchBar,
-  googleSearchButton,
-  linkToMoroSystemsWebsite,
-  careersPageLink,
-  logo,
-  languageSelector,
-  czechLanguage
-} from "./fixtures.js";
-
-
+import GooglePage from "../../pages/GooglePage";
+import MoroSystemsPage from "../../pages/MoroSystemsPage";
+import MoroSystemsCareerPage from "../../pages/MoroSystemsCareerPage";
+  
 describe("Google Search and Navigation Test", () => {
-  // Function to accept cookies if the button is displayed
-  async function acceptCookies(selector) {
-    const cookiesButton = await $(selector);
-    if (await cookiesButton.isDisplayed()) {
-      await cookiesButton.click();
-    }
-  }
+
 
   it("should search for MoroSystems on Google and navigate to the Career page", async () => {
     //Opens the browser and navigates to Google
-    await browser.url("https://www.google.com");
+    await GooglePage.open();
 
     //Acceptance of cookies on Google.
-    await acceptCookies("#L2AGLb > div");
+    await GooglePage.acceptCookies();
 
     //Type "MoroSystems" into the Google search bar
-    const searchBar = await $(googleSearchBar);
-    await searchBar.setValue("MoroSystems");
-    expect(searchBar).toHaveValue("MoroSystems");
-
-    //Display of search results.
-    const searchButton = await $(googleSearchButton);
-    await searchButton.click();
+    await GooglePage.search("MoroSystems");
+    expect(await GooglePage.googleSearchBar.getValue()).toBe("MoroSystems");
 
     //Opening the MoroSystems website.
-    const moroLink = await $(linkToMoroSystemsWebsite);
-    await moroLink.waitForDisplayed();
-    expect(moroLink).toBeDisplayed();
-    await moroLink.click();
+    await GooglePage.navigateToMoroSystemWebsite();
+    expect(GooglePage.moroLink).toBeDisplayed();
+    
 
     // Verify MoroSystems logo is displayed
-    const moroLogo = await $(logo);
-    await moroLogo.waitForDisplayed();
-    expect(moroLogo).toBeDisplayed();
+    await MoroSystemsPage.verifyLogo();
+    expect(MoroSystemsPage.moroLogo).toBeDisplayed();
 
     //Acceptance of cookies on MoroSystems.
-    await acceptCookies("#cookiescript_accept");
+    await MoroSystemsPage.acceptCookies();
 
-    (await $(languageSelector)).click();
-    (await $(czechLanguage)).click();
+    //Language switch to Czech
+    await MoroSystemsPage.switchLanguageToCzech();;
 
     //Clicking on the "Kariéra" link.
-    const careerLink = await $(careersPageLink);
-    await careerLink.click();
+    await MoroSystemsPage.navigateToCareer();
 
     // Verify the page title contains "Kariéra"
-    const pageTitle = await browser.getTitle();
-    expect(pageTitle).toContain("Kariéra");
+    const title = await MoroSystemsCareerPage.getTitle();
+    expect(title).toContain("Kariéra");
 
     //Acceptance of cookies on MoroSystems on "Kariéra" page.
-    await acceptCookies("#cookiescript_accept");
+    await MoroSystemsCareerPage.acceptCookies();
   });
 });
