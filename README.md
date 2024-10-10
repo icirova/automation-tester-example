@@ -18,8 +18,7 @@ Solution Example for Automation Tester
 * Allure reporter
 
 ## Prerequesities for start 
-Downloaded and installed a latest version of [Node.JS](https://nodejs.org/en)
-Java 11+
+Downloaded and installed a latest version of [Node.JS](https://nodejs.org/en) and Java 11+
 
 ## Test run instructions
 
