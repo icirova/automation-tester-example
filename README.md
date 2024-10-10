@@ -3,6 +3,14 @@ Solution Example for Automation Tester
 
 [![Testing](https://github.com/icirova/automation-tester-example/actions/workflows/testing.js.yml/badge.svg)](https://github.com/icirova/automation-tester-example/actions/workflows/testing.js.yml)
 
+## Test Case
+1. Open the browser
+2. Go to the Google search bar
+3. Type "MoroSystems" into the Google search bar
+4. Display search results
+5. Go to MoroSystems website (https://www.morosystems.cz/)
+6. Visit the "Kariéra" page on this domain
+
 ## Technologies
 * WebdriverIO
 * Mocha
