@@ -6,9 +6,9 @@ Solution Example for Automation Tester
 ## Test Case
 1. Open the browser
 2. Go to the Google search bar
-3. Type "MoroSystems" into the Google search bar
+3. Type company name into the Google search bar
 4. Display search results
-5. Go to MoroSystems website (https://www.morosystems.cz/)
+5. Go to company website
 6. Visit the "Kariéra" page on this domain
 
 ## Technologies
@@ -19,6 +19,7 @@ Solution Example for Automation Tester
 
 ## Prerequesities for start 
 Downloaded and installed a latest version of [Node.JS](https://nodejs.org/en)
+Java 11+
 
 ## Test run instructions
 
